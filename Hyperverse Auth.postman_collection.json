@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "cd873f67-0986-4912-9e06-f72fa328c6f5",
+		"name": "Hyperverse Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19934621"
+	},
+	"item": [
+		{
+			"name": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/",
+					"protocol": "https",
+					"host": [
+						"hyperverse-api-sfhnrqb7ba-uc",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const auth = pm.response.json().accessToken;\r",
+							"\r",
+							"pm.collectionVariables.set(\"authToken\", auth);\r",
+							"\r",
+							"const template = '{{result}}';\r",
+							"\r",
+							"pm.visualizer.set(template, {result:auth});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"contact@megahyped.com\",\r\n    \"password\": \"74247d5bac\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/login",
+					"protocol": "https",
+					"host": [
+						"hyperverse-api-sfhnrqb7ba-uc",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"contact@megahyped.com\",\r\n    \"password\": \"74247d5bac\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/users/info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/users/info",
+					"protocol": "https",
+					"host": [
+						"hyperverse-api-sfhnrqb7ba-uc",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"users",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": ""
+		}
+	]
+}
