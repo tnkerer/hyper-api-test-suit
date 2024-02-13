@@ -37,7 +37,7 @@ E clicar em `SEND`. A resposta será um objeto **JSON** com o conteúdo da nova 
 ```
 ![image](https://github.com/tnkerer/hyper-api-test-suit/assets/78161484/26e844f6-f495-4cc6-b507-bf5c6559e164)
 
-## 3️⃣ Buscando informações de unsuário da base de dados
+## 3️⃣ Buscando informações de usuário da base de dados
 
 As informações criadas no passo 2️⃣ podem ser acessadas a qualquer momento usando o endpoint `https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/users/info` com o método `GET`. Mas para isso, é importante primeiro estar autenticado na API através do endpoint de LOGIN: `https://hyperverse-api-sfhnrqb7ba-uc.a.run.app/login`
 
